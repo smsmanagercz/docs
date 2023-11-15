@@ -1,16 +1,21 @@
 ---
-title: 'Fronty odesílání'
+title: 'Rychlost odesílání'
 description: 'Display inline code and code blocks'
 icon: 'code'
 ---
 
-## Fronty odesílání
+## Fronty pro příjem požadavků
 
 SmsManager pracuje se soustavou front, které zpracovávají požadavky na odeslání zprávy a odesílají zprávy.
 
 
+| Fronta        | Kdy použít                                              | Jak použít                                                                                 |
+| ------------- |---------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| Základní      | Pokud odesíláte marketingové nebo transakční zprávy     | Jedná se o výchozí použití. Pokud nedefinujete jinak, vždy se použije základní fronta pro příjem požadavků |
+| Prioritní     | Pokud odesíláte přístupové kódy do aplikace nebo validujete telefonní čísla | Použít je možné `/message/priority` endpoint                                     |
 
-### Code Block
+
+## Fronty pro odesílání zpráv
 
 Use [fenced code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) by enclosing code in three backticks and follow the leading ticks with the programming language of your snippet to get syntax highlighting. Optionally, you can also write the name of your code after the programming language.
 
