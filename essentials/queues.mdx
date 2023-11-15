@@ -9,30 +9,21 @@ icon: 'code'
 SmsManager pracuje se soustavou front, které zpracovávají požadavky na odeslání zprávy a odesílají zprávy.
 
 
-| Fronta        | Kdy použít                                              | Jak použít                                                                                 |
+| Fronta        | Kdy použít                                             | Jak použít                                                                                 |
 | ------------- |---------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| Základní      | Pokud odesíláte marketingové nebo transakční zprávy     | Jedná se o výchozí použití. Pokud nedefinujete jinak, vždy se použije základní fronta pro příjem požadavků |
-| Prioritní     | Pokud odesíláte přístupové kódy do aplikace nebo validujete telefonní čísla | Použít je možné `/message/priority` endpoint                                     |
+| **Základní**      | Pokud odesíláte marketingové nebo transakční zprávy     | Jedná se o výchozí použití. Pokud nedefinujete jinak, vždy se použije základní fronta pro příjem požadavků |
+| **Prioritní**     | Pokud odesíláte přístupové kódy do aplikace nebo validujete telefonní čísla | Použít je možné `/message/priority` endpoint                                     |
 
 
 ## Fronty pro odesílání zpráv
 
-Use [fenced code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) by enclosing code in three backticks and follow the leading ticks with the programming language of your snippet to get syntax highlighting. Optionally, you can also write the name of your code after the programming language.
+Pro odesílání zpráv se standardně používají různé fronty odpovídající nejčastěji destinaci příjemce (konkrétně země nebo operátor).
 
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
+Pokud systém detekuje, že zprávy jsou hromadného charakteru, jsou automaticky označeny jako marketingové. Jak takové zprávy detekujeme:
+ - Obsahují stejný obsah zpráv pro více příjemců
+ - Jsou uvedeny textem "OS" či podobně
+ - Obsahují informace pro zrušení příjmu SMS nebo se podobají běžným marketingovým sdělením
 
-````md
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
-````
+Marketingové zprávy mají upravené některé vlastnosti. Jedná se zejména o:
+ - priorita odesílání (zprávy jsou odesílány nižší rychlostí)
+ - doručenky, mohou být zpracovány až se zpožděním (při odesílání se upřednostňuje jejich předání do sítě operátora)
