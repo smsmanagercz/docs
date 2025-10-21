@@ -19,7 +19,7 @@
         "tab": "API reference",
         "icon": "square-terminal",
         "pages": [
-          "api"
+          "api/cs/json"
         ]
       }
     ],
