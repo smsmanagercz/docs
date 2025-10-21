@@ -18,20 +18,7 @@
       {
         "tab": "API reference",
         "icon": "square-terminal",
-        "pages": [
-          "api/cs/json"
-        ]
-      }
-    ],
-    "groups": [
-      {
-        "group": "JSON API reference",
-        "openapi": "/api/cs/json/jsonapi_v2.yaml",
-        "pages": [
-          "overview",
-          "authentication",
-          "POST /message"
-        ]
+        "openapi": "/api/cs/json/jsonapi_v2.yaml"
       }
     ]
   },
